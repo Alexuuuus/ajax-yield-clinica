@@ -8,7 +8,7 @@ package net.daw.bean;
 
 /**
  *
- * @author sergio
+ * @author Alejandro
  */
 class MedicoBean {
     
