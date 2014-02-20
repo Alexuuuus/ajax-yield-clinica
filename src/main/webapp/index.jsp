@@ -107,8 +107,12 @@
         <script src="js/util.js" charset="UTF-8"></script>
         <script src="js/main.js" charset="UTF-8"></script>
 
-        <script src="js/control/alumno.js" charset="UTF-8"></script>
         <script src="js/control/usuario.js" charset="UTF-8"></script>
+        <script src="js/control/paciente.js" charset="UTF-8"></script>
+
+
+
+        <script src="js/control/alumno.js" charset="UTF-8"></script>
         <script src="js/control/lenguaje.js" charset="UTF-8"></script>
         <script src="js/control/documento.js" charset="UTF-8"></script>
         <script src="js/control/entrada.js" charset="UTF-8"></script>
@@ -133,10 +137,45 @@
         <script src="js/control/profesor.js" charset="UTF-8"></script>
         <script src="js/control/backlog.js" charset="UTF-8"></script>
 
+
         <script>
 
             $(document).ready(function() {
                 inicializacion();
+
+                $('#lnkUsuario').unbind('click');
+                $('#lnkUsuario').click(function() {
+                    var usuario = objeto('usuario', '<%=request.getContextPath()%>');
+                    var usuarioView = vista(usuario, '<%=request.getContextPath()%>');
+
+                    $('#indexContenidoJsp').empty();
+                    $('#indexContenido').empty().append(usuarioView.getEmptyList());
+
+                    var usuarioControl = control_usuario_list('<%=request.getContextPath()%>');
+                    usuarioControl.inicia(usuarioView, 1, null, null, 10, null, null, null, null);
+                    return false;
+                });
+
+                $('#lnkPaciente').unbind('click');
+                $('#lnkPaciente').click(function() {
+                    var paciente = objeto('paciente', '<%=request.getContextPath()%>');
+                    var pacienteView = vista(paciente, '<%=request.getContextPath()%>');
+
+                    $('#indexContenidoJsp').empty();
+                    $('#indexContenido').empty().append(pacienteView.getEmptyList());
+
+                    var pacienteControl = control_paciente_list('<%=request.getContextPath()%>');
+                    pacienteControl.inicia(pacienteView, 1, null, null, 10, null, null, null, null);
+                    return false;
+                });
+
+
+
+
+
+
+
+
                 $('#lnkLenguaje').unbind('click');
                 $('#lnkLenguaje').click(function() {
                     var lenguaje = objeto('lenguaje', '<%=request.getContextPath()%>');
@@ -212,18 +251,6 @@
                 });
 
 
-                $('#lnkUsuario').unbind('click');
-                $('#lnkUsuario').click(function() {
-                    var usuario = objeto('usuario', '<%=request.getContextPath()%>');
-                    var usuarioView = vista(usuario, '<%=request.getContextPath()%>');
-
-                    $('#indexContenidoJsp').empty();
-                    $('#indexContenido').empty().append(usuarioView.getEmptyList());
-
-                    var usuarioControl = control_usuario_list('<%=request.getContextPath()%>');
-                    usuarioControl.inicia(usuarioView, 1, null, null, 10, null, null, null, null);
-                    return false;
-                });
 
                 $('#lnkHilo').unbind('click');
                 $('#lnkHilo').click(function() {

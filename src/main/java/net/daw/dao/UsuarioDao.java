@@ -4,14 +4,14 @@
  */
 package net.daw.dao;
 
-
+import net.daw.bean.PacienteBean;
 import net.daw.bean.UsuarioBean;
 import net.daw.helper.Conexion;
 import net.daw.helper.Enum;
 
 /**
  *
- * @author rafa
+ * @author Alejandro
  */
 public class UsuarioDao extends GenericDaoImplementation<UsuarioBean> {
 
@@ -43,29 +43,21 @@ public class UsuarioDao extends GenericDaoImplementation<UsuarioBean> {
     public UsuarioBean type(UsuarioBean oUsuarioBean) throws Exception {
 
         try {
-            AlumnoDao oAlumnoDao = new AlumnoDao(enumTipoConexion);
-            AlumnoBean oAlumnoBean = oAlumnoDao.getFromId_usuario(oUsuarioBean);
+            PacienteDao dao = new PacienteDao(enumTipoConexion, "pacientes");
+            PacienteBean bean = dao.getFromId_usuario(oUsuarioBean);
             oUsuarioBean.setTipoUsuario(Enum.TipoUsuario.Alumno);
         } catch (Exception e1) {
             try {
-                EmpresaDao oEmpresaDao = new EmpresaDao(enumTipoConexion);
-                EmpresaBean oEmpresaBean = oEmpresaDao.getFromId_usuario(oUsuarioBean);
-                oUsuarioBean.setTipoUsuario(Enum.TipoUsuario.Empresa);
-            } catch (Exception e2) {
-                try {
-                    ProfesorDao oProfesorDao = new ProfesorDao(enumTipoConexion);
-                    ProfesorBean oProfesorBean = oProfesorDao.getFromId_usuario(oUsuarioBean);
-                    oUsuarioBean.setTipoUsuario(Enum.TipoUsuario.Profesor);
-                } catch (Exception e3) {
-                    throw new Exception("UsuarioDao.type: Error: " + e3.getMessage());
-                }
+                //TODO: Queda añadir la logica del medico
+            } catch (Exception e3) {
+                throw new Exception("UsuarioDao.type: Error: " + e3.getMessage());
             }
         } finally {
             oMysql.desconexion();
         }
         return oUsuarioBean;
     }
- 
+
     @Override
     public UsuarioBean get(UsuarioBean oUsuarioBean) throws Exception {
         if (oUsuarioBean.getId() > 0) {
@@ -88,5 +80,4 @@ public class UsuarioDao extends GenericDaoImplementation<UsuarioBean> {
         return oUsuarioBean;
     }
 
-    
 }
