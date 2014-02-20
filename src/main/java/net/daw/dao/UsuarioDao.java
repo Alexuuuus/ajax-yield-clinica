@@ -4,9 +4,7 @@
  */
 package net.daw.dao;
 
-import net.daw.bean.AlumnoBean;
-import net.daw.bean.EmpresaBean;
-import net.daw.bean.ProfesorBean;
+
 import net.daw.bean.UsuarioBean;
 import net.daw.helper.Conexion;
 import net.daw.helper.Enum;

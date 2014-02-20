@@ -1,9 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package net.daw.operaciones;
 
 import com.google.gson.Gson;
@@ -17,7 +15,7 @@ import net.daw.helper.Conexion;
 
 /**
  *
- * @author Alejandro
+ * @author mati
  */
 public class RecetaGet implements GenericOperation {
 
@@ -43,4 +41,3 @@ public class RecetaGet implements GenericOperation {
         }
     }
 }
-

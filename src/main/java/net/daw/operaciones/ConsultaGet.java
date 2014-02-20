@@ -1,9 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package net.daw.operaciones;
 
 import com.google.gson.Gson;
@@ -17,7 +15,7 @@ import net.daw.helper.Conexion;
 
 /**
  *
- * @author Alejandro
+ * @author mati
  */
 public class ConsultaGet implements GenericOperation {
 
@@ -39,8 +37,7 @@ public class ConsultaGet implements GenericOperation {
             }
             return data;
         } catch (Exception e) {
-            throw new ServletException("ConsultasGetJson: View Error: " + e.getMessage());
+            throw new ServletException("ConsultaGetJson: View Error: " + e.getMessage());
         }
     }
 }
-

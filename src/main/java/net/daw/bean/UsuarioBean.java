@@ -6,37 +6,23 @@ package net.daw.bean;
 
 /**
  *
- * @author rafa
+ * @author mati
  */
 public class UsuarioBean {
-
+    
     private Integer id = 0;
     private String login = "";
-    private String password = "";
+    private String password = "";        
     private Enum tipoUsuario = null;
 
-    public UsuarioBean() {
-
+    
+    public UsuarioBean (){
+        
     }
-
-    public UsuarioBean(Integer id) {
+    
+    public UsuarioBean(Integer id){
         this.id = id;
     }
-
-    /**
-     * @return the tipoUsuario
-     */
-    public Enum getTipoUsuario() {
-        return tipoUsuario;
-    }
-
-    /**
-     * @param tipoUsuario the tipoUsuario to set
-     */
-    public void setTipoUsuario(Enum tipoUsuario) {
-        this.tipoUsuario = tipoUsuario;
-   }
-
     /**
      * @return the id
      */
@@ -77,5 +63,19 @@ public class UsuarioBean {
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    /**
+     * @return the tipoUsuario
+     */
+    public Enum getTipoUsuario() {
+        return tipoUsuario;
+    }
+
+    /**
+     * @param tipoUsuario the tipoUsuario to set
+     */
+    public void setTipoUsuario(Enum tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
     }
 }
