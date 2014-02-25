@@ -6,16 +6,20 @@ package net.daw.operaciones;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import net.daw.bean.RecetaBean;
 import net.daw.dao.RecetaDao;
 import net.daw.helper.Conexion;
+import net.daw.helper.FilterBean;
 
 /**
  *
- * @author mati
+ * @author Alejandro
  */
 public class RecetaGet implements GenericOperation {
 
