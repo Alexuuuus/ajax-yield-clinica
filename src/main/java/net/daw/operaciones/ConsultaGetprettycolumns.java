@@ -4,10 +4,23 @@
  */
 package net.daw.operaciones;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 /**
  *
- * @author mati
+ * @author Alejandro
  */
-public class ConsultaGetprettycolumns {
-    
+public class ConsultaGetprettycolumns implements GenericOperation {
+
+    @Override
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        try {
+            String data = "{\"data\": [\"id\", \"id_medico\", \"id_paciente\", \"dia_consulta\"]}";
+            return data;
+        } catch (Exception e) {
+            throw new ServletException("ConsultaGetpagesJson: View Error: " + e.getMessage());
+        }
+    }
 }
