@@ -22,7 +22,7 @@ public class RecetaGetcolumns implements GenericOperation {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         ArrayList<String> alColumns = null;
         try {
-            RecetaDao dao = new RecetaDao(Conexion.getConection(),"receta");
+            RecetaDao dao = new RecetaDao(Conexion.getConection(),"recetas");
             alColumns = dao.getColumnsNames();
             String data = new Gson().toJson(alColumns);
             data = "{\"data\":" + data + "}";

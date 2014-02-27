@@ -46,7 +46,7 @@ public class HistorialGetregisters  implements GenericOperation {
                     }
                 }
             }       
-            HistorialDao dao = new HistorialDao(Conexion.getConection(),"historial");
+            HistorialDao dao = new HistorialDao(Conexion.getConection(),"historiales");
             int pages = dao.getCount(alFilter);
             data = "{\"data\":\"" + Integer.toString(pages) + "\"}";
             return data;

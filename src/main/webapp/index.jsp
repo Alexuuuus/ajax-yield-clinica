@@ -109,10 +109,12 @@
 
         <script src="js/control/usuario.js" charset="UTF-8"></script>
         <script src="js/control/paciente.js" charset="UTF-8"></script>
+        <script src="js/control/historial.js" charset="UTF-8"></script>
+        <script src="js/control/consulta.js" charset="UTF-8"></script> 
+        <script src="js/control/receta.js" charset="UTF-8"></script> 
 
 
-
-        <script src="js/control/alumno.js" charset="UTF-8"></script>
+       <!-- <script src="js/control/alumno.js" charset="UTF-8"></script>
         <script src="js/control/lenguaje.js" charset="UTF-8"></script>
         <script src="js/control/documento.js" charset="UTF-8"></script>
         <script src="js/control/entrada.js" charset="UTF-8"></script>
@@ -135,7 +137,7 @@
         <script src="js/control/incidencias.js" charset="UTF-8"></script>
         <script src="js/control/requerimiento.js" charset="UTF-8"></script>
         <script src="js/control/profesor.js" charset="UTF-8"></script>
-        <script src="js/control/backlog.js" charset="UTF-8"></script>
+        <script src="js/control/backlog.js" charset="UTF-8"></script> -->
 
 
         <script>
@@ -168,15 +170,55 @@
                     pacienteControl.inicia(pacienteView, 1, null, null, 10, null, null, null, null);
                     return false;
                 });
+                
+                     $('#lnkhistorial').unbind('click');
+                $('#lnkHistorial').click(function() {
+                    var historial = objeto('historial', '<%=request.getContextPath()%>');
+                    var historialView = vista(historial, '<%=request.getContextPath()%>');
+
+                    $('#indexContenidoJsp').empty();
+                    $('#indexContenido').empty().append(historialView.getEmptyList());
+
+                    var historialControl = control_historial_list('<%=request.getContextPath()%>');
+                    historialControl.inicia(historialView, 1, null, null, 10, null, null, null, null);
+                    return false;
+                });
+                
+                $('#lnkConsulta').unbind('click');
+                $('#lnkConsulta').click(function() {
+                    var consulta = objeto('consulta', '<%=request.getContextPath()%>');
+                    var consultaView = vista(consulta, '<%=request.getContextPath()%>');
+
+                    $('#indexContenidoJsp').empty();
+                    $('#indexContenido').empty().append(consultaView.getEmptyList());
+
+                    var consultaControl = control_consulta_list('<%=request.getContextPath()%>');
+                    consultaControl.inicia(consultaView, 1, null, null, 10, null, null, null, null);
+                    return false;
+                });
+                
+                 $('#lnkReceta').unbind('click');
+                $('#lnkReceta').click(function() {
+                    var receta = objeto('receta', '<%=request.getContextPath()%>');
+                    var recetaView = vista(receta, '<%=request.getContextPath()%>');
+
+                    $('#indexContenidoJsp').empty();
+                    $('#indexContenido').empty().append(recetaView.getEmptyList());
+
+                    var recetaControl = control_paciente_list('<%=request.getContextPath()%>');
+                    recetaControl.inicia(recetaView, 1, null, null, 10, null, null, null, null);
+                    return false;
+                });
+
+
+
+                /** TODO: METER MEDICO, MEDICAMENTO Y SERVICIOS */
 
 
 
 
-
-
-
-
-                $('#lnkLenguaje').unbind('click');
+                
+              /** $('#lnkLenguaje').unbind('click');
                 $('#lnkLenguaje').click(function() {
                     var lenguaje = objeto('lenguaje', '<%=request.getContextPath()%>');
                     var lenguajeView = vista(lenguaje, '<%=request.getContextPath()%>');
@@ -505,7 +547,7 @@
                     profesorControl.inicia(profesorView, 1, null, null, 10, null, null, null, null);
                     return false;
                 });
-
+                    */
             });
 
         </script>

@@ -75,7 +75,7 @@ public class PacienteGetpage implements GenericOperation {
             } else {
                 hmOrder = null;
             }
-            PacienteDao dao = new PacienteDao(Conexion.getConection(),"paciente");
+            PacienteDao dao = new PacienteDao(Conexion.getConection(),"pacientes");
             List<PacienteBean> bean = dao.getPage(rpp, page, alFilter, hmOrder);
             GsonBuilder gsonBuilder = new GsonBuilder();
             gsonBuilder.setDateFormat("dd/MM/yyyy");

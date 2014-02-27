@@ -26,7 +26,7 @@ public class HistorialGet implements GenericOperation {
             if (request.getParameter("id") == null) {
                 data = "{\"error\":\"id is mandatory\"}";
             } else {
-                HistorialDao dao = new HistorialDao(Conexion.getConection(),"historial");
+                HistorialDao dao = new HistorialDao(Conexion.getConection(),"historiales");
                 HistorialBean bean = new HistorialBean();
                 bean.setId(Integer.parseInt(request.getParameter("id")));
                 dao.get(bean);                                

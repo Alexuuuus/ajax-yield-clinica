@@ -14,21 +14,21 @@ import java.util.Date;
  */
 public class ConsultaBean {
     private int id;
-    private MedicoBean medico;
-    private PacienteBean paciente;
-    private Date diaConsulta;
+    private MedicoBean medico = null;
+    private PacienteBean paciente = null;
+    private Date diaConsulta = new Date();
 
     /**
      * @return the id
      */
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

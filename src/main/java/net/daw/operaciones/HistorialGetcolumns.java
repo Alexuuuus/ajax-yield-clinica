@@ -22,7 +22,7 @@ public class HistorialGetcolumns implements GenericOperation {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         ArrayList<String> alColumns = null;
         try {
-            HistorialDao dao = new HistorialDao(Conexion.getConection(),"historial");
+            HistorialDao dao = new HistorialDao(Conexion.getConection(),"historiales");
             alColumns = dao.getColumnsNames();
             String data = new Gson().toJson(alColumns);
             data = "{\"data\":" + data + "}";

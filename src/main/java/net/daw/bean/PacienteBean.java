@@ -11,23 +11,23 @@ package net.daw.bean;
  * @author Alejandro
  */
 public class PacienteBean {
-    private int id;
-    private String nombre;
-    private String apellidos;
-    private String dni;
-    private String telefono;
+    private Integer id = 0;
+    private String nombre = "";
+    private String apellidos = "";
+    private String dni = "";
+    private String telefono = "";
 
     /**
      * @return the id
      */
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

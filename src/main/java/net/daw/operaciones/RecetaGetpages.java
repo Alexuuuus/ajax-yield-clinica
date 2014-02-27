@@ -64,7 +64,7 @@ public class RecetaGetpages implements GenericOperation {
             } else {
                 hmOrder = null;
             }
-            RecetaDao dao = new RecetaDao(Conexion.getConection(),"receta");
+            RecetaDao dao = new RecetaDao(Conexion.getConection(),"recetas");
             int pages = dao.getPages(rpp, alFilter, hmOrder);
             data = "{\"data\":\"" + Integer.toString(pages) + "\"}";
             return data;

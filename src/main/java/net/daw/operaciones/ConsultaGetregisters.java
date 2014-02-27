@@ -46,7 +46,7 @@ public class ConsultaGetregisters  implements GenericOperation {
                     }
                 }
             }       
-            ConsultaDao dao = new ConsultaDao(Conexion.getConection(),"consulta");
+            ConsultaDao dao = new ConsultaDao(Conexion.getConection(),"consultas");
             int pages = dao.getCount(alFilter);
             data = "{\"data\":\"" + Integer.toString(pages) + "\"}";
             return data;

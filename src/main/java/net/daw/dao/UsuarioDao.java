@@ -4,6 +4,7 @@
  */
 package net.daw.dao;
 
+import net.daw.bean.MedicoBean;
 import net.daw.bean.PacienteBean;
 import net.daw.bean.UsuarioBean;
 import net.daw.helper.Conexion;
@@ -48,7 +49,9 @@ public class UsuarioDao extends GenericDaoImplementation<UsuarioBean> {
             oUsuarioBean.setTipoUsuario(Enum.TipoUsuario.Alumno);
         } catch (Exception e1) {
             try {
-                //TODO: Queda añadir la logica del medico
+                MedicoDao dao = new MedicoDao(enumTipoConexion, "medicos");
+                MedicoBean bean = dao.getFromId_usuario(oUsuarioBean);
+                oUsuarioBean.setTipoUsuario(Enum.TipoUsuario.Alumno);
             } catch (Exception e3) {
                 throw new Exception("UsuarioDao.type: Error: " + e3.getMessage());
             }

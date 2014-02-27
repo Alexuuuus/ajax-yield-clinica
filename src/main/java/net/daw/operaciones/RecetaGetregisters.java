@@ -48,7 +48,7 @@ public class RecetaGetregisters  implements GenericOperation {
                     }
                 }
             }       
-            RecetaDao dao = new RecetaDao(Conexion.getConection(),"receta");
+            RecetaDao dao = new RecetaDao(Conexion.getConection(),"recetas");
             int pages = dao.getCount(alFilter);
             data = "{\"data\":\"" + Integer.toString(pages) + "\"}";
             return data;

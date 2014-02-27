@@ -46,7 +46,7 @@ public class PacienteGetregisters  implements GenericOperation {
                     }
                 }
             }       
-            PacienteDao dao = new PacienteDao(Conexion.getConection(),"Paciente");
+            PacienteDao dao = new PacienteDao(Conexion.getConection(),"pacientes");
             int pages = dao.getCount(alFilter);
             data = "{\"data\":\"" + Integer.toString(pages) + "\"}";
             return data;

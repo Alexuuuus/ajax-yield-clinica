@@ -75,7 +75,7 @@ public class ConsultaGetpage implements GenericOperation {
             } else {
                 hmOrder = null;
             }
-            ConsultaDao dao = new ConsultaDao(Conexion.getConection(),"consulta");
+            ConsultaDao dao = new ConsultaDao(Conexion.getConection(),"consultas");
             List<ConsultaBean> bean = dao.getPage(rpp, page, alFilter, hmOrder);
             GsonBuilder gsonBuilder = new GsonBuilder();
             gsonBuilder.setDateFormat("dd/MM/yyyy");

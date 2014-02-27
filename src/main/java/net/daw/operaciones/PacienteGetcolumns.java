@@ -22,7 +22,7 @@ public class PacienteGetcolumns implements GenericOperation {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         ArrayList<String> alColumns = null;
         try {
-            PacienteDao dao = new PacienteDao(Conexion.getConection(),"paciente");
+            PacienteDao dao = new PacienteDao(Conexion.getConection(),"pacientes");
             alColumns = dao.getColumnsNames();
             String data = new Gson().toJson(alColumns);
             data = "{\"data\":" + data + "}";

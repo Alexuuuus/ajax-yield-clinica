@@ -13,24 +13,24 @@ import java.util.Date;
  * @author Alejandro
  */
 public class RecetaBean {
-    private int id;
-    private ConsultaBean consulta;
-    private Date inicioTratamiento;
-    private int duracion;
-    private String descripcion;
-    private MedicamentoBean medicamento;
+    private Integer id = 0;
+    private ConsultaBean consulta = null;
+    private Date inicioTratamiento = new Date();
+    private Integer duracion = 0;
+    private String descripcion = "";
+    private MedicamentoBean medicamento = null;
 
     /**
      * @return the id
      */
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -72,7 +72,7 @@ public class RecetaBean {
     /**
      * @param duracion the duracion to set
      */
-    public void setDuracion(int duracion) {
+    public void setDuracion(Integer duracion) {
         this.duracion = duracion;
     }
 

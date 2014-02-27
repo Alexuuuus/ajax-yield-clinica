@@ -75,7 +75,7 @@ public class RecetaGetpage implements GenericOperation {
             } else {
                 hmOrder = null;
             }
-            RecetaDao dao = new RecetaDao(Conexion.getConection(),"receta");
+            RecetaDao dao = new RecetaDao(Conexion.getConection(),"recetas");
             List<RecetaBean> bean = dao.getPage(rpp, page, alFilter, hmOrder);
             GsonBuilder gsonBuilder = new GsonBuilder();
             gsonBuilder.setDateFormat("dd/MM/yyyy");

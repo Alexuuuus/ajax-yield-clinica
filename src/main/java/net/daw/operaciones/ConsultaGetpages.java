@@ -64,7 +64,7 @@ public class ConsultaGetpages implements GenericOperation {
             } else {
                 hmOrder = null;
             }
-            ConsultaDao dao = new ConsultaDao(Conexion.getConection(),"consulta");
+            ConsultaDao dao = new ConsultaDao(Conexion.getConection(),"consultas");
             int pages = dao.getPages(rpp, alFilter, hmOrder);
             data = "{\"data\":\"" + Integer.toString(pages) + "\"}";
             return data;

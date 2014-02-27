@@ -64,7 +64,7 @@ public class HistorialGetpages implements GenericOperation {
             } else {
                 hmOrder = null;
             }
-            HistorialDao dao = new HistorialDao(Conexion.getConection(),"historial");
+            HistorialDao dao = new HistorialDao(Conexion.getConection(),"historiales");
             int pages = dao.getPages(rpp, alFilter, hmOrder);
             data = "{\"data\":\"" + Integer.toString(pages) + "\"}";
             return data;

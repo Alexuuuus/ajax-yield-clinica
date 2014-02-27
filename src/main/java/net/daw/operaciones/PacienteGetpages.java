@@ -64,7 +64,7 @@ public class PacienteGetpages implements GenericOperation {
             } else {
                 hmOrder = null;
             }
-            PacienteDao dao = new PacienteDao(Conexion.getConection(),"paciente");
+            PacienteDao dao = new PacienteDao(Conexion.getConection(),"pacientes");
             int pages = dao.getPages(rpp, alFilter, hmOrder);
             data = "{\"data\":\"" + Integer.toString(pages) + "\"}";
             return data;

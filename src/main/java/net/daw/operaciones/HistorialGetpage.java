@@ -75,7 +75,7 @@ public class HistorialGetpage implements GenericOperation {
             } else {
                 hmOrder = null;
             }
-            HistorialDao dao = new HistorialDao(Conexion.getConection(),"historial");
+            HistorialDao dao = new HistorialDao(Conexion.getConection(),"historiales");
             List<HistorialBean> bean = dao.getPage(rpp, page, alFilter, hmOrder);
             GsonBuilder gsonBuilder = new GsonBuilder();
             gsonBuilder.setDateFormat("dd/MM/yyyy");

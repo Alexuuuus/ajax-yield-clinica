@@ -9,7 +9,7 @@ import net.daw.bean.ConsultaBean;
 import net.daw.helper.Conexion;
 /**
  *
- * @author sergio
+ * @author Alejandro
  */
 
 public class ConsultaDao extends GenericDaoImplementation<ConsultaBean>{
